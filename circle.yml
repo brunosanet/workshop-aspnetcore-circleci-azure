@@ -18,11 +18,11 @@ machine:
  
    test:
     pre:
-     - dotnet build test/UnitTest/project.json
+     - dotnet build WorkshopAspnetCore/test/UnitTest/project.json
    override:
-     - dotnet test test/UnitTest/project.json
+     - dotnet test WorkshopAspnetCore/test/UnitTest/project.json
    post:
-     - dotnet publish --configuration Release src/WebAPIApplication/project.json
-     - cp -R src/WebAPIApplication/bin/Release/netcoreapp1.1/ $CIRCLE_ARTIFACTS/
+     - dotnet publish --configuration Release WorkshopAspnetCore/src/WebAPIApplication/project.json
+     - cp -R WorkshopAspnetCore/src/WebAPIApplication/bin/Release/netcoreapp1.1/ $CIRCLE_ARTIFACTS/
    
    
