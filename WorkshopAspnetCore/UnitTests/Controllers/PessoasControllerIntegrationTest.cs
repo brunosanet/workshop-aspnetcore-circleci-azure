@@ -82,8 +82,8 @@ namespace UnitTests.Controllers
                 Twitter = "novo twitter"
             };
 
-            await TestDataContext.AddAsync(pessoa);
-            await TestDataContext.SaveChangesAsync();
+            TestDataContext.Add(pessoa);
+            TestDataContext.SaveChanges();
 
             var data = TestDataContext.Pessoas.Where(c => c.Nome == pessoa.Nome && c.Twitter == pessoa.Twitter).FirstOrDefault();
             data.Nome = "pessoa alterada";

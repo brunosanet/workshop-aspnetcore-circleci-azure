@@ -37,7 +37,7 @@ namespace WebAPIApplication.Controllers
         public IActionResult AtualizaPessoa([FromBody]Pessoa modelo)
         {
              _dataContext.Pessoas.Update(modelo);
-             _dataContext.SaveChangesAsync();
+             _dataContext.SaveChanges();
             return Json(modelo);
         }
     }
